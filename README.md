@@ -15,33 +15,29 @@
 
 Сайт не требует сборки, Node.js, npm или внешних библиотек. Все ресурсы локальные.
 
-## Как опубликовать на GitHub Pages
+## Публикация
 
-1. Создайте репозиторий на GitHub, например `metaverse-longread`.
-2. Загрузите **содержимое папки `longread`** в корень репозитория. В корне должен оказаться `index.html`, рядом — папка `assets`.
-3. Выполните:
+Сайт уже опубликован на GitHub Pages:
+
+**https://shawdowy.github.io/Longread_metaverse_games/**
+
+- `main` — рабочая ветка с исходниками;
+- `gh-pages` — ветка, из которой GitHub Pages раздаёт сайт.
+
+### Как обновить сайт
+
+После изменений в папке `longread`:
 
 ```bash
-git init
 git add .
-git commit -m "Add metaverse longread"
-git branch -M main
-git remote add origin https://github.com/USERNAME/metaverse-longread.git
-git push -u origin main
+git commit -m "Update longread"
+git push origin main
+git push origin main:gh-pages
 ```
 
-4. В репозитории откройте **Settings → Pages**.
-5. В разделе **Build and deployment** выберите:
-   - Source: **Deploy from a branch**;
-   - Branch: **main**, folder: **/ (root)**.
-6. Сохраните настройки и подождите 1–2 минуты.
-7. Ссылка будет вида:
+Вторая команда синхронизирует ветку `gh-pages` с `main` — именно из неё сейчас публикуется сайт.
 
-```text
-https://USERNAME.github.io/metaverse-longread/
-```
-
-Если назвать репозиторий `USERNAME.github.io`, сайт откроется по адресу `https://USERNAME.github.io/`.
+При желании в **Settings → Pages** можно переключить источник на `main` и папку `/ (root)`, тогда достаточно будет пушить только `main`.
 
 ## Как проверить локально
 
